@@ -1,12 +1,12 @@
 import {
-	Box,
-	Container,
-	Flex,
-	Grid,
-	GridItem,
-	Heading,
-	Image,
-	useColorMode
+  Box,
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  useColorMode,
 } from "@chakra-ui/react";
 import { content } from "../content/content";
 
@@ -59,9 +59,14 @@ const SingleClient = ({
   return (
     <Flex justify="center">
       {colorMode === "light" ? (
-        <Image src={image} alt={name} boxSize="120px" />
+        <Image src={image} alt={name} boxSize="120px" objectFit="contain" />
       ) : (
-        <Image src={darkImage ?? image} alt={name} boxSize="120px" />
+        <Image
+          src={darkImage ?? image}
+          alt={name}
+          boxSize="120px"
+          objectFit="contain"
+        />
       )}
     </Flex>
   );
