@@ -14,6 +14,8 @@ export default function Hero({ id }: { id: string }) {
     "linear(to-b, brand.50, transparent, brand.50)",
     "linear(to-b, brand.950,transparent, brand.950)"
   );
+  const bg = useColorModeValue("whiteAlpha.300", "blackAlpha.300");
+
   const textColor = useColorModeValue("brand.900", "brand.100");
   return (
     <Box
@@ -52,8 +54,9 @@ export default function Hero({ id }: { id: string }) {
       >
         <Container
           maxW="container.xl"
+          bg={bg}
           backdropFilter={"blur(10px)"}
-          borderRadius={"2xl"}
+          borderRadius={"3xl"}
           py={16}
           px={8}
         >
