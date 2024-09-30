@@ -1,13 +1,14 @@
-import { FaHome, FaMailBulk, FaPhone, FaSchool, FaUser } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
-import { WebsiteContent } from "./types";
 import { BsQuestion } from "react-icons/bs";
+import { FaMailBulk, FaPhone, FaSchool, FaUser } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+import { RiBuilding2Fill } from "react-icons/ri";
+import { WebsiteContent } from "./types";
 
 export const content: WebsiteContent = {
   header: {
     logo: "FSWS",
     navigation: [
-      { name: "Home", href: "home", icon: FaHome },
+      { name: "About Us", href: "about", icon: RiBuilding2Fill },
       { name: "Services", href: "services", icon: FaUser },
       { name: "Why Us?", href: "why-us", icon: FaSchool },
       { name: "FAQs", href: "faq", icon: BsQuestion },
