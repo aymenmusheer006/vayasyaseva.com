@@ -45,7 +45,6 @@ export const Navbar = () => {
           justify={"space-between"}
           bg={useColorModeValue("brand.100", "brand.900")}
           height={"64px"}
-          pl={3}
           pr={{
             base: 2,
             md: 1,
@@ -58,7 +57,7 @@ export const Navbar = () => {
         >
           <Image
             src={"/assets/fsws-logo.png"}
-            boxSize={10}
+            boxSize={16}
             onContextMenu={preventRightClick}
           />
           {isMobile ? (
@@ -170,7 +169,7 @@ const BottomSheet = ({
       <DrawerContent bg={useColorModeValue("brand.50", "brand.950")} py={4}>
         <DrawerHeader>
           <Stack direction={"row"} justify={"space-between"} align={"center"}>
-            <Image src={"/assets/fsws-logo.png"} boxSize={10} />
+            <Image src={"/assets/fsws-logo.png"} boxSize={16} />
             <IconButton
               aria-label="Close menu"
               icon={<FaTimes />}
