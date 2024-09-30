@@ -17,17 +17,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import {
-  FaHome,
-  FaMailBulk,
-  FaMoon,
-  FaSchool,
-  FaSun,
-  FaTimes,
-  FaUser,
-} from "react-icons/fa";
+import { FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { Link } from "react-scroll";
+import { content } from "../content/content";
 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -94,6 +87,7 @@ const DesktopOptions = () => {
   const borderColor = useColorModeValue("brand.200", "brand.500");
   const hoverColor = useColorModeValue("brand.50", "brand.600");
   const textColor = useColorModeValue("brand.800", "brand.50");
+  const options = content.header.navigation;
 
   return (
     <Stack
@@ -159,6 +153,7 @@ const BottomSheet = ({
     onClose();
     trackClick(name, "Mobile");
   };
+  const options = content.header.navigation;
 
   const borderColor = useColorModeValue("brand.200", "brand.600");
   const hoverColor = useColorModeValue("brand.50", "brand.600");
@@ -254,13 +249,6 @@ const handleKeyDown = (e: React.KeyboardEvent, href: string, name: string) => {
     trackClick(name, "Keyboard");
   }
 };
-
-const options = [
-  { name: "Home", href: "home", icon: FaHome },
-  { name: "Services", href: "services", icon: FaUser },
-  { name: "Why Us?", href: "why-us", icon: FaSchool },
-  { name: "Contact", href: "contact", icon: FaMailBulk },
-];
 
 // Analytics
 const trackClick = (

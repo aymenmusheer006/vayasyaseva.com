@@ -1,6 +1,7 @@
 import { FaHome, FaMailBulk, FaPhone, FaSchool, FaUser } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { WebsiteContent } from "./types";
+import { BsQuestion } from "react-icons/bs";
 
 export const content: WebsiteContent = {
   header: {
@@ -9,6 +10,7 @@ export const content: WebsiteContent = {
       { name: "Home", href: "home", icon: FaHome },
       { name: "Services", href: "services", icon: FaUser },
       { name: "Why Us?", href: "why-us", icon: FaSchool },
+      { name: "FAQs", href: "faq", icon: BsQuestion },
       { name: "Contact", href: "contact", icon: FaMailBulk },
     ],
     contactButton: "Contact Us",
@@ -83,12 +85,39 @@ export const content: WebsiteContent = {
         answer:
           "Our waste audits identify inefficiencies and recommend strategies to minimize waste generation and maximize recycling.",
       },
+      {
+        question: "Do you offer custom waste management plans?",
+        answer:
+          "Yes, we provide tailored waste management solutions to meet the specific needs of your business or industry. We assess your requirements and design a plan that maximizes efficiency and sustainability.",
+      },
+      {
+        question: "How do your waste audits work?",
+        answer:
+          "Our waste audits analyze your current waste disposal practices to identify areas for improvement. We provide actionable recommendations to reduce waste, enhance recycling, and lower overall costs.",
+      },
+      {
+        question: "What industries do you serve?",
+        answer:
+          "We cater to a wide range of industries including manufacturing, construction, retail, hospitality, and more. If you're unsure, contact us and we'll discuss how we can support your business.",
+      },
+      {
+        question: "Can you help us achieve zero waste?",
+        answer:
+          "Absolutely. Our zero-waste consulting services guide you through the process of minimizing waste generation and increasing recycling to reach your sustainability goals.",
+      },
+      {
+        question:
+          "Are your services compliant with local and national regulations?",
+        answer:
+          "Yes, we ensure that all our waste management practices comply with local, state, and federal regulations, so you can be confident in staying fully compliant while reducing environmental impact.",
+      },
     ],
   },
   contactSection: {
     id: "contact",
-    title: "Get in touch",
-    contactMethodsTitle: "Or contact us directly",
+    contactMethodsTitle: "Contact Us Directly",
+
+    title: "Or send us a message",
     fields: [
       {
         id: "email",

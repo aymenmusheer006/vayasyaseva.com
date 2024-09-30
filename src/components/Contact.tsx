@@ -20,10 +20,34 @@ export default function ContactSection({ id }: { id: string }) {
   const headingColor = useColorModeValue("brand.600", "brand.100");
 
   const boxBg = useColorModeValue("brand.100", "brand.800");
+	const borderColor = useColorModeValue("brand.200", "brand.700");
 
   return (
     <Box as="section" py={8} id={id} maxW="container.xl" w="full">
-      <Box bg={boxBg} borderRadius={"3xl"} py={8} px={8}>
+      {/* Contact Methods */}
+      <Box h={24} />
+      <Box p={8}>
+        <Heading as="h2" size="xl" mb={8} color={headingColor}>
+          {contactSection.contactMethodsTitle}
+        </Heading>
+        <Stack spacing={8} direction={{ base: "column", md: "row" }}>
+          {contactSection.contactMethods.map((method, index) => (
+            <Box key={index}>
+              <Heading as="h3" size="xl" color={headingColor}>
+                <Icon as={method.icon} mr={2} />
+                {method.name}
+              </Heading>
+              <Heading size="xl" href={method.href} as={Link}>
+                {method.value}
+              </Heading>
+            </Box>
+          ))}
+        </Stack>
+      </Box>
+      {/* Contact Form */}
+
+      <Box h={24} />
+      <Box bg={boxBg} borderRadius={"3xl"} py={8} px={8} border={"1px"} borderColor={borderColor}>
         <Heading as="h2" size="xl" mb={8} color={headingColor}>
           {contactSection.title}
         </Heading>
@@ -43,24 +67,6 @@ export default function ContactSection({ id }: { id: string }) {
           </Button>
         </VStack>
       </Box>
-      <Box h={8} />
-      {/* Contact Methods */}
-      <Heading as="h2" size="xl" mb={8} color={headingColor}>
-        {contactSection.contactMethodsTitle}
-      </Heading>
-      <Stack spacing={8} direction={{ base: "column", md: "row" }}>
-        {contactSection.contactMethods.map((method, index) => (
-          <Box key={index}>
-            <Heading as="h3" size="xl" color={headingColor}>
-              <Icon as={method.icon} mr={2} />
-              {method.name}
-            </Heading>
-            <Heading size="xl" href={method.href} as={Link}>
-              {method.value}
-            </Heading>
-          </Box>
-        ))}
-      </Stack>
     </Box>
   );
 }
