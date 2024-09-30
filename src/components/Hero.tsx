@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { content } from "../content/content";
+import { Link } from "react-scroll";
 
 export default function Hero({ id }: { id: string }) {
   const videoCoverGradient = useColorModeValue(
@@ -67,8 +68,14 @@ export default function Hero({ id }: { id: string }) {
             {content.heroSection.subheading}
           </Text>
 
-          <Button size="lg" colorScheme="brand">
-            Get Started
+          <Button
+            size="lg"
+            colorScheme="brand"
+            borderRadius={"2xl"}
+            as={Link}
+            to={content.heroSection.ctaButton.href}
+          >
+            {content.heroSection.ctaButton.label}
           </Button>
         </Container>
       </Stack>

@@ -20,7 +20,10 @@ export const content: WebsiteContent = {
     id: "home",
     headline: "Zero Waste. Maximum Impact.",
     subheading: "Innovative waste solutions for a cleaner tomorrow.",
-    ctaButton: "Get Started",
+    ctaButton: {
+      label: "Get in touch",
+      href: "contact",
+    },
   },
   aboutSection: {
     id: "about",

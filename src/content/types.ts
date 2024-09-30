@@ -14,7 +14,10 @@ export interface HeroSection {
   id: string;
   headline: string;
   subheading: string;
-  ctaButton: string;
+  ctaButton: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface AboutSection {
