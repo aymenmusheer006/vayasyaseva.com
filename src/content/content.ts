@@ -21,6 +21,12 @@ export const content: WebsiteContent = {
     subheading: "Innovative waste solutions for a cleaner tomorrow.",
     ctaButton: "Get Started",
   },
+  aboutSection: {
+    id: "about",
+    title: "Who We Are",
+    description:
+      "First Source Waste Solutions is a leading provider of waste management services. We help businesses reduce waste, recycle efficiently, and achieve their sustainability goals. Our team of experts works closely with clients to develop customized waste management solutions that are cost-effective and environmentally friendly.",
+  },
   servicesSection: {
     id: "services",
     title: "Our Solutions",

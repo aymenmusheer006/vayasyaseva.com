@@ -17,6 +17,12 @@ export interface HeroSection {
   ctaButton: string;
 }
 
+export interface AboutSection {
+  id: string;
+  title: string;
+  description: string;
+}
+
 export interface ServiceCard {
   title: string;
   description: string;
@@ -82,6 +88,7 @@ export interface Footer {
 
 export interface WebsiteContent {
   header: Header;
+  aboutSection: AboutSection;
   heroSection: HeroSection;
   servicesSection: ServicesSection;
   impactSection: ImpactSection;
