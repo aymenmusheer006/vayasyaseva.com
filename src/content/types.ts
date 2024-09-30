@@ -42,6 +42,29 @@ export interface ImpactSection {
   statistics: Statistic[];
 }
 
+export interface ContactSection {
+  id: string;
+  title: string;
+  contactMethodsTitle: string;
+  fields: ContactField[];
+  // Directly contact without form
+  contactMethods: ContactMethod[];
+}
+
+export interface ContactField {
+  id: string;
+  label: string;
+  type: string;
+  placeholder: string;
+}
+
+export interface ContactMethod {
+  name: string;
+  value: string;
+  icon: React.ElementType;
+  href: string;
+}
+
 export interface Footer {
   copyright: string;
 }
@@ -51,5 +74,6 @@ export interface WebsiteContent {
   heroSection: HeroSection;
   servicesSection: ServicesSection;
   impactSection: ImpactSection;
+  contactSection: ContactSection;
   footer: Footer;
 }

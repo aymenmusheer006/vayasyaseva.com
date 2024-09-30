@@ -1,0 +1,66 @@
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Heading,
+  Icon,
+  Input,
+  Link,
+  Stack,
+  Textarea,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
+import { content } from "../content/content";
+
+export default function ContactSection({ id }: { id: string }) {
+  const contactSection = content.contactSection;
+  const fields = contactSection.fields;
+  const headingColor = useColorModeValue("brand.600", "brand.100");
+
+  const boxBg = useColorModeValue("brand.100", "brand.800");
+
+  return (
+    <Box as="section" py={8} id={id} maxW="container.xl" w="full">
+      <Box bg={boxBg} borderRadius={"3xl"} py={8} px={8}>
+        <Heading as="h2" size="xl" mb={8} color={headingColor}>
+          {contactSection.title}
+        </Heading>
+        <VStack spacing={4} as="form">
+          {fields.map((field, index) => (
+            <FormControl key={index} isRequired>
+              <FormLabel>{field.label}</FormLabel>
+              {field.type === "textarea" ? (
+                <Textarea placeholder={field.placeholder} />
+              ) : (
+                <Input type={field.type} placeholder={field.placeholder} />
+              )}
+            </FormControl>
+          ))}
+          <Button type="submit" colorScheme="brand" width="full" size="lg">
+            Submit
+          </Button>
+        </VStack>
+      </Box>
+      <Box h={8} />
+      {/* Contact Methods */}
+      <Heading as="h2" size="xl" mb={8} color={headingColor}>
+        {contactSection.contactMethodsTitle}
+      </Heading>
+      <Stack spacing={8} direction={{ base: "column", md: "row" }}>
+        {contactSection.contactMethods.map((method, index) => (
+          <Box key={index}>
+            <Heading as="h3" size="xl" color={headingColor}>
+              <Icon as={method.icon} mr={2} />
+              {method.name}
+            </Heading>
+            <Heading size="xl" href={method.href} as={Link}>
+              {method.value}
+            </Heading>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
+}

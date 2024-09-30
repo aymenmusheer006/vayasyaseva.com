@@ -45,6 +45,8 @@ const SingleStat = ({
 }: Statistic) => {
   const [displayStat, setDisplayStat] = useState(stat);
 
+  const headingColor = useColorModeValue("brand.800", "brand.100");
+
   useEffect(() => {
     if (isRollingNumber) {
       const numberMatch = stat.match(/(\d+)/);
@@ -79,10 +81,10 @@ const SingleStat = ({
       justify="center"
       textAlign="center"
     >
-      <Heading as="h3" size="xl">
+      <Heading as="h3" size="xl" color={headingColor}>
         {displayStat}
       </Heading>
-      <Text fontSize="lg" color="brand.100">
+      <Text fontSize="lg">
         {description}
       </Text>
     </VStack>

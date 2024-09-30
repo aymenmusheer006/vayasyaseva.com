@@ -1,4 +1,5 @@
-import { FaHome, FaMailBulk, FaSchool, FaUser } from "react-icons/fa";
+import { FaHome, FaMailBulk, FaPhone, FaSchool, FaUser } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 import { WebsiteContent } from "./types";
 
 export const content: WebsiteContent = {
@@ -54,12 +55,12 @@ export const content: WebsiteContent = {
     statistics: [
       {
         stat: "5,000 Tons",
-        description: "of waste diverted from landfills",
+        description: "Waste diverted from landfills",
         isRollingNumber: true,
       },
       {
         stat: "500,000 kg",
-        description: "of industrial ash transformed into products",
+        description: "Industrial ash transformed into products",
         isRollingNumber: true,
       },
       {
@@ -68,7 +69,40 @@ export const content: WebsiteContent = {
       },
     ],
   },
+  contactSection: {
+    id: "contact",
+    title: "Get in touch",
+    contactMethodsTitle: "Or contact us directly",
+    fields: [
+      {
+        id: "email",
+        label: "Email",
+        type: "email",
+        placeholder: "Enter your email",
+      },
+      {
+        id: "message",
+        label: "Message",
+        type: "textarea",
+        placeholder: "Enter your message",
+      },
+    ],
+    contactMethods: [
+      {
+        name: "Email",
+        value: "help@fsws.in",
+        icon: IoMail,
+        href: "mailto:help@fsws.in",
+      },
+      {
+        name: "Phone",
+        value: "+91 1234567890",
+        icon: FaPhone,
+        href: "tel:+911234567890",
+      },
+    ],
+  },
   footer: {
-    copyright: "© 2024 First Source Waste Solutions. All Rights Reserved.",
+    copyright: `© ${new Date().getFullYear()} First Source Waste Solutions. All Rights Reserved.`,
   },
 };

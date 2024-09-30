@@ -4,7 +4,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { content } from "../content/content";
 import { ServiceCard } from "../content/types";
@@ -37,11 +37,13 @@ const SingleService = ({ title, description, image }: ServiceCard) => {
   const bg = useColorModeValue("brand.100", "brand.900");
   const backdrop = useColorModeValue("whiteAlpha.700", "blackAlpha.800");
   const headingColor = useColorModeValue("brand.800", "brand.100");
+  const border = useColorModeValue("brand.200", "brand.700");
+
   return (
     <Stack
       borderRadius="xl"
       borderWidth={1}
-      borderColor="brand.200"
+      borderColor={border}
       spacing={4}
       bg={bg}
       position="relative"
@@ -50,7 +52,13 @@ const SingleService = ({ title, description, image }: ServiceCard) => {
       bgPosition="center"
       bgRepeat="no-repeat"
     >
-      <Box p={4} bg={backdrop} borderRadius="xl" h="full">
+      <Box
+        p={4}
+        bg={backdrop}
+        h="full"
+        // Make inner border radius match outer border radius and adjust padding
+        borderRadius="xl"
+      >
         <Heading as="h3" size="lg" color={headingColor}>
           {title}
         </Heading>
