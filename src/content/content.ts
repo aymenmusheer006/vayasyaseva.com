@@ -29,9 +29,9 @@ export const content: WebsiteContent = {
     id: "clients",
     title: "Our Clients",
     clients: [
-      { name: "ITC Limited", image: "/assets/clients/ITC.png" },
-      { name: "Wipro", image: "/assets/clients/Wipro.png" },
-      { name: "Unilever", image: "/assets/clients/Unilever.png" },
+      { name: "ITC Limited", image: "/assets/clients/ITC-light.png" },
+      { name: "Wipro", image: "/assets/clients/Wipro-light.png" },
+      { name: "Unilever", image: "/assets/clients/Unilever-light.png" },
       { name: "Client 4", image: "/assets/clients/client-4.webp" },
     ],
   },

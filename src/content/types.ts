@@ -29,6 +29,7 @@ export interface ClientsSection {
 export interface Clients {
   name: string;
   image: string;
+  darkImage?: string;
 }
 
 export interface AboutSection {
