@@ -42,6 +42,17 @@ export interface ImpactSection {
   statistics: Statistic[];
 }
 
+export interface FAQSection {
+  id: string;
+  title: string;
+  questions: FAQQuestion[];
+}
+
+export interface FAQQuestion {
+  question: string;
+  answer: string;
+}
+
 export interface ContactSection {
   id: string;
   title: string;
@@ -74,6 +85,7 @@ export interface WebsiteContent {
   heroSection: HeroSection;
   servicesSection: ServicesSection;
   impactSection: ImpactSection;
+  faqSection: FAQSection;
   contactSection: ContactSection;
   footer: Footer;
 }

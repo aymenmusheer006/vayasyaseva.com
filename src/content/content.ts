@@ -69,6 +69,22 @@ export const content: WebsiteContent = {
       },
     ],
   },
+  faqSection: {
+    id: "faq",
+    title: "Frequently Asked Questions",
+    questions: [
+      {
+        question: "What types of waste do you manage?",
+        answer:
+          "We manage all types of non-hazardous solid waste including industrial waste, recyclables, and organic waste.",
+      },
+      {
+        question: "How do you help businesses reduce waste?",
+        answer:
+          "Our waste audits identify inefficiencies and recommend strategies to minimize waste generation and maximize recycling.",
+      },
+    ],
+  },
   contactSection: {
     id: "contact",
     title: "Get in touch",

@@ -6,6 +6,7 @@ import ServicesSection from "./components/Services";
 import { content } from "./content/content";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import FAQSection from "./components/FAQ";
 
 export default function App() {
   const bg = useColorModeValue("brand.50", "brand.950");
@@ -21,6 +22,7 @@ export default function App() {
       <Hero id={content.heroSection.id} />
       <ServicesSection id={content.servicesSection.id} />
       <ImpactSection id={content.impactSection.id} />
+      <FAQSection id={content.faqSection.id} />
       <Contact id={content.contactSection.id} />
       <Footer />
     </Flex>
