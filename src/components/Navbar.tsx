@@ -1,4 +1,5 @@
 import {
+  Box,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -11,18 +12,21 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  useColorMode,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import {
-  FaHamburger,
   FaHome,
   FaMailBulk,
+  FaMoon,
   FaSchool,
+  FaSun,
   FaTimes,
   FaUser,
 } from "react-icons/fa";
+import { MdMenu } from "react-icons/md";
 import { Link } from "react-scroll";
 
 export const Navbar = () => {
@@ -50,7 +54,7 @@ export const Navbar = () => {
           height={"64px"}
           pl={3}
           pr={{
-            base: 3,
+            base: 2,
             md: 1,
           }}
           w={"full"}
@@ -60,22 +64,20 @@ export const Navbar = () => {
           borderColor={borderColor}
         >
           <Image
-            src={"/assets/logo.svg"}
+            src={"/assets/fsws-logo.png"}
             boxSize={10}
-            as={motion.img}
-            whileHover={{ rotate: -120, scale: 1.1 }}
-            whileTap={{ rotate: 120, scale: 1.05 }}
             onContextMenu={preventRightClick}
           />
           {isMobile ? (
             <Flex align={"center"}>
               <IconButton
                 aria-label="Open menu"
-                icon={<FaHamburger />}
+                icon={<MdMenu />}
                 variant={"ghost"}
                 onClick={isOpen ? onClose : onOpen}
                 rounded={"full"}
                 colorScheme="brand"
+                size={"lg"}
               />
             </Flex>
           ) : (
@@ -139,7 +141,9 @@ const DesktopOptions = () => {
           </Flex>
         </motion.div>
       ))}
-      {/* <Box w={2} /> */}
+      <Box w={2} />
+      <ColorThemeSwitcher />
+      <Box w={2} />
     </Stack>
   );
 };
@@ -171,13 +175,7 @@ const BottomSheet = ({
       <DrawerContent bg={useColorModeValue("brand.50", "brand.950")} py={4}>
         <DrawerHeader>
           <Stack direction={"row"} justify={"space-between"} align={"center"}>
-            <Image
-              src={"/assets/logo.svg"}
-              boxSize={10}
-              as={motion.img}
-              whileHover={{ rotate: -120, scale: 1.1 }}
-              whileTap={{ rotate: 120, scale: 1.05 }}
-            />
+            <Image src={"/assets/fsws-logo.png"} boxSize={10} />
             <IconButton
               aria-label="Close menu"
               icon={<FaTimes />}
@@ -232,6 +230,19 @@ const BottomSheet = ({
         </DrawerBody>
       </DrawerContent>
     </Drawer>
+  );
+};
+
+const ColorThemeSwitcher = () => {
+  const { toggleColorMode, colorMode } = useColorMode();
+  return (
+    <IconButton
+      aria-label="Toggle color mode"
+      icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
+      onClick={toggleColorMode}
+      rounded={"full"}
+      colorScheme="brand"
+    />
   );
 };
 

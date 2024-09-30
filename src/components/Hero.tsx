@@ -1,7 +1,9 @@
 import {
   Box,
   Button,
+  Container,
   Heading,
+  Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -12,13 +14,14 @@ export default function Hero({ id }: { id: string }) {
     "linear(to-b, brand.50, transparent, brand.50)",
     "linear(to-b, brand.950,transparent, brand.950)"
   );
-  const textColor = useColorModeValue("brand.700", "brand.100");
+  const textColor = useColorModeValue("brand.900", "brand.100");
   return (
     <Box
       position="relative"
       id={id}
       overflow="hidden"
       width={"100%"}
+      height={"100vh"}
       color={textColor}
     >
       {/* Background video */}
@@ -40,16 +43,32 @@ export default function Hero({ id }: { id: string }) {
       </video>
 
       {/* Content overlay */}
-      <Box position="relative" py={32} bgGradient={videoCoverGradient} px={8} color={textColor}>
-        <Heading as="h1" size="3xl" mb={4} py={2} px={4}>
-          {content.heroSection.headline}
-        </Heading>
-        <Text fontSize="xl" mb={8}  py={2} px={4}>
-          {content.heroSection.subheading}
-        </Text>
+      <Stack
+        position="relative"
+        bgGradient={videoCoverGradient}
+        height={"100%"}
+        justify={"center"}
+        color={textColor}
+      >
+        <Container
+          maxW="container.xl"
+          backdropFilter={"blur(10px)"}
+          borderRadius={"2xl"}
+          py={16}
+          px={8}
+        >
+          <Heading as="h1" size="3xl" mb={4} py={2} px={4}>
+            {content.heroSection.headline}
+          </Heading>
+          <Text fontSize="xl" mb={8} py={2} px={4}>
+            {content.heroSection.subheading}
+          </Text>
 
-        <Button size="lg">Get Started</Button>
-      </Box>
+          <Button size="lg" colorScheme="brand">
+            Get Started
+          </Button>
+        </Container>
+      </Stack>
     </Box>
   );
 }

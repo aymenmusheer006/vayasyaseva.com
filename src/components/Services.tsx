@@ -1,25 +1,26 @@
 import {
   Box,
   Heading,
-  Image,
   SimpleGrid,
+  Stack,
   Text,
-  useColorModeValue,
-  VStack,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { content } from "../content/content";
+import { ServiceCard } from "../content/types";
 
 export default function ServicesSection({ id }: { id: string }) {
   const servicesSection = content.servicesSection;
+  const headingColor = useColorModeValue("brand.600", "brand.100");
   return (
-    <Box as="section" py={16} px={8} id={id}>
+    <Box as="section" py={16} px={8} id={id} w="full" maxW="container.xl">
       {/* Section Title */}
-      <Heading as="h2" size="xl" mb={8}>
+      <Heading as="h2" size="xl" mb={8} color={headingColor}>
         {servicesSection.title}
       </Heading>
 
       {/* Cards Grid */}
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={1}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={4}>
         {servicesSection.cards.map((card, index) => (
           <SingleService
             key={index}
@@ -32,21 +33,12 @@ export default function ServicesSection({ id }: { id: string }) {
     </Box>
   );
 }
-
-const SingleService = ({
-  title,
-  description,
-  image,
-}: {
-  title: string;
-  description: string;
-  image: string;
-}) => {
+const SingleService = ({ title, description, image }: ServiceCard) => {
   const bg = useColorModeValue("brand.100", "brand.900");
-
+  const backdrop = useColorModeValue("whiteAlpha.700", "blackAlpha.800");
+  const headingColor = useColorModeValue("brand.800", "brand.100");
   return (
-    <VStack
-      p={4}
+    <Stack
       borderRadius="xl"
       borderWidth={1}
       borderColor="brand.200"
@@ -56,27 +48,14 @@ const SingleService = ({
       bgImage={image}
       bgSize="cover"
       bgPosition="center"
-      _before={{
-        content: '""',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        bgGradient: "linear(to-b, transparent, brand.50)",
-        zIndex: 1,
-        borderRadius: "xl",
-      }}
+      bgRepeat="no-repeat"
     >
-      {/* Content Layer */}
-      <VStack position="relative" zIndex={2} spacing={4} minH={300} justify={"end"}>
-        <Heading as="h3" size="md" color="brand.500">
+      <Box p={4} bg={backdrop} borderRadius="xl" h="full">
+        <Heading as="h3" size="lg" color={headingColor}>
           {title}
         </Heading>
-        <Text fontSize="md" color="gray.600">
-          {description}
-        </Text>
-      </VStack>
-    </VStack>
+        <Text fontSize="lg">{description}</Text>
+      </Box>
+    </Stack>
   );
 };

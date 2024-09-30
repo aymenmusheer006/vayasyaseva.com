@@ -1,22 +1,25 @@
+import { FaHome, FaMailBulk, FaSchool, FaUser } from "react-icons/fa";
 import { WebsiteContent } from "./types";
 
 export const content: WebsiteContent = {
   header: {
     logo: "FSWS",
     navigation: [
-      { label: "Sustainability", link: "/#sustainability" },
-      { label: "About", link: "/#about" },
-      { label: "Services", link: "/#services" },
-      { label: "Contact", link: "/#contact" },
+      { name: "Home", href: "home", icon: FaHome },
+      { name: "Services", href: "services", icon: FaUser },
+      { name: "Why Us?", href: "why-us", icon: FaSchool },
+      { name: "Contact", href: "contact", icon: FaMailBulk },
     ],
     contactButton: "Contact Us",
   },
   heroSection: {
+    id: "home",
     headline: "Zero Waste. Maximum Impact.",
     subheading: "Innovative waste solutions for a cleaner tomorrow.",
     ctaButton: "Get Started",
   },
   servicesSection: {
+    id: "services",
     title: "Our Solutions",
     cards: [
       {
@@ -46,15 +49,18 @@ export const content: WebsiteContent = {
     ],
   },
   impactSection: {
+    id: "why-us",
     title: "We make change happen.",
     statistics: [
       {
         stat: "5,000 Tons",
         description: "of waste diverted from landfills",
+        isRollingNumber: true,
       },
       {
         stat: "500,000 kg",
         description: "of industrial ash transformed into products",
+        isRollingNumber: true,
       },
       {
         stat: "Zero-Waste",

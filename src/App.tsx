@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ImpactSection from "./components/Impact";
 import ServicesSection from "./components/Services";
+import { content } from "./content/content";
 
 export default function App() {
   const bg = useColorModeValue("brand.50", "brand.950");
@@ -15,9 +16,9 @@ export default function App() {
       align={"center"}
     >
       <Navbar />
-      <Hero id="hero" />
-      <ServicesSection id="services" />
-      <ImpactSection id="impact" />
+      <Hero id={content.heroSection.id} />
+      <ServicesSection id={content.servicesSection.id} />
+      <ImpactSection id={content.impactSection.id} />
     </Flex>
   );
 }

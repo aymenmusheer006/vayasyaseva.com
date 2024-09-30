@@ -1,43 +1,48 @@
-interface NavigationItem {
-  label: string;
-  link: string;
+export interface NavigationItem {
+  name: string;
+  href: string; 
+  icon: React.ElementType;
 }
 
-interface Header {
+export interface Header {
   logo: string;
   navigation: NavigationItem[];
   contactButton: string;
 }
 
-interface HeroSection {
+export interface HeroSection {
+  id: string;
   headline: string;
   subheading: string;
   ctaButton: string;
 }
 
-interface ServiceCard {
+export interface ServiceCard {
   title: string;
   description: string;
   image: string;
 }
 
-interface ServicesSection {
+export interface ServicesSection {
+  id: string;
   title: string;
   cards: ServiceCard[];
 }
 
-interface Statistic {
+export interface Statistic {
   stat: string;
   description: string;
+  isRollingNumber?: boolean;
   image?: string;
 }
 
-interface ImpactSection {
+export interface ImpactSection {
+  id: string;
   title: string;
   statistics: Statistic[];
 }
 
-interface Footer {
+export interface Footer {
   copyright: string;
 }
 
