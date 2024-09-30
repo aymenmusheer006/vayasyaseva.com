@@ -15,7 +15,7 @@ export default function AboutSection({ id }: { id: string }) {
 
   return (
     <Flex
-      id="about"
+      id={id}
       minH={"500px"}
       w={"full"}
       maxW={"100vw"}
@@ -51,7 +51,7 @@ export default function AboutSection({ id }: { id: string }) {
               base: "3xl",
               md: "4xl",
             }}
-            color={useColorModeValue("brand.800", "brand.200")}
+            color={headingColor}
           >
             {aboutSection.title}
           </Heading>
