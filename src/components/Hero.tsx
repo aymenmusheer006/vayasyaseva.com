@@ -23,7 +23,7 @@ export default function Hero({ id }: { id: string }) {
       id={id}
       overflow="hidden"
       width={"100%"}
-      height={"100vh"}
+      height={"80vh"}
       color={textColor}
     >
       {/* Background video */}
