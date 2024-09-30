@@ -25,6 +25,16 @@ export const content: WebsiteContent = {
       href: "contact",
     },
   },
+  clientsSection: {
+    id: "clients",
+    title: "Our Clients",
+    clients: [
+      { name: "ITC Limited", image: "/assets/clients/ITC.png" },
+      { name: "Wipro", image: "/assets/clients/Wipro.png" },
+      { name: "Unilever", image: "/assets/clients/Unilever.png" },
+      { name: "Client 4", image: "/assets/clients/client-4.webp" },
+    ],
+  },
   aboutSection: {
     id: "about",
     title: "Who We Are",

@@ -1,6 +1,6 @@
 export interface NavigationItem {
   name: string;
-  href: string; 
+  href: string;
   icon: React.ElementType;
 }
 
@@ -18,6 +18,17 @@ export interface HeroSection {
     label: string;
     href: string;
   };
+}
+
+export interface ClientsSection {
+  id: string;
+  title: string;
+  clients: Clients[];
+}
+
+export interface Clients {
+  name: string;
+  image: string;
 }
 
 export interface AboutSection {
@@ -91,6 +102,7 @@ export interface Footer {
 
 export interface WebsiteContent {
   header: Header;
+  clientsSection: ClientsSection;
   aboutSection: AboutSection;
   heroSection: HeroSection;
   servicesSection: ServicesSection;
