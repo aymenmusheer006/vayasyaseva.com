@@ -81,6 +81,7 @@ export interface ContactSection {
   fields: ContactField[];
   // Directly contact without form
   contactMethods: ContactMethod[];
+  enableForm: boolean;
 }
 
 export interface ContactField {

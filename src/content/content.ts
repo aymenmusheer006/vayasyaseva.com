@@ -152,6 +152,7 @@ export const content: WebsiteContent = {
   contactSection: {
     id: "contact",
     contactMethodsTitle: "Contact Us Directly",
+    enableForm: false,
 
     title: "Or send us a message",
     fields: [
