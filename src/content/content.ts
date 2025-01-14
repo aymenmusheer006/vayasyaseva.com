@@ -178,10 +178,16 @@ export const content: WebsiteContent = {
       },
       {
         name: "Phone",
-        value: "+91 1234567890",
+        value: "+91 90688 55443",
         icon: FaPhone,
-        href: "tel:+911234567890",
+        href: "tel:+919068855443",
       },
+      {
+        name:"Alternate Phone",
+        value:"+91 74095 16090",
+        href:"tel:+917409516090",
+        icon: FaPhone,
+      }
     ],
   },
   footer: {
