@@ -17,8 +17,8 @@ export const content: WebsiteContent = {
     contactButton: "Contact Us",
   },
   heroSection: {
-    id: "home",
-    headline: "Zero Waste. Maximum Impact.",
+    id: "homie",
+    headline: "lol no",
     subheading: "Innovative waste solutions for a cleaner tomorrow.",
     ctaButton: {
       label: "Get in touch",
@@ -39,16 +39,8 @@ export const content: WebsiteContent = {
         image: "/assets/clients/Wipro-light.png",
         darkImage: "/assets/clients/Wipro-dark.png",
       },
-      {
-        name: "Unilever",
-        image: "/assets/clients/Unilever-light.png",
-        darkImage: "/assets/clients/Unilever-dark.png",
-      },
-      {
-        name: "EFS",
-        image: "/assets/clients/EFS-light.png",
-        darkImage: "/assets/clients/EFS-dark.png",
-      },
+ 
+  
     ],
   },
   aboutSection: {
@@ -59,22 +51,22 @@ export const content: WebsiteContent = {
   },
   servicesSection: {
     id: "services",
-    title: "Our Solutions",
+    title: "Our Services",
     cards: [
       {
-        title: "Industrial Waste Disposal",
+        title: "Loading/Unloading",
         description:
           "Safe, efficient, and compliant disposal services tailored to your business.",
         image: "/assets/services/industrial-waste.webp",
       },
       {
-        title: "Recycling & Reuse",
+        title: "Housekeeping",
         description:
           "Innovative recycling technologies to reduce landfill usage and save resources.",
         image: "/assets/services/recycling.webp",
       },
       {
-        title: "Waste Audits",
+        title: "Construction",
         description:
           "Streamline your processes, minimize waste, and save money with our expert audits.",
         image: "/assets/services/waste-audit.webp",
